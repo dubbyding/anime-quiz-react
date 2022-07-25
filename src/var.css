@@ -1,8 +1,13 @@
 :root {
-	--inter: 'Inter', san-serif;
-	--karla: 'Karla', sans-serif;
+	--inter-font: 'Inter', san-serif;
+	--karla-font: 'Karla', sans-serif;
 
 	--bg-color: #f5f7fb;
 
 	--main-text-color: #293264;
+
+	--button-color: #4d5b9e;
+	--button-color-hover: #0a1861;
+
+	--button-text-color: #f5f7fb;
 }

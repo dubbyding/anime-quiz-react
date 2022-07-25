@@ -4,14 +4,35 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	gap: 7px;
 }
 .landing--header {
-	font-family: 'Karla', sans-serif;
-	font-style: normal;
+	font-family: var(--karla-font);
 	font-weight: 700;
 	font-size: 31.25px;
 	line-height: 37px;
 	text-align: center;
 
 	color: var(--main-text-color);
+}
+
+.landing--detail {
+	font-family: var(--inter-font);
+	font-weight: 400;
+	line-height: 19px;
+	text-align: center;
+
+	color: var(--main-text-color);
+}
+.landing--button {
+	font-family: var(--inter-font);
+	font-weight: 500;
+	line-height: 19px;
+	font-size: 1rem;
+	text-align: center;
+
+	color: var(--button-text-color);
+
+	padding: 17px 60px;
 }
