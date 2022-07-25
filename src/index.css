@@ -9,7 +9,6 @@
 .main--container {
 	background: url('./assets/images/background.png'), var(--bg-color);
 	background-size: cover;
-
 	width: 100vw;
 	height: 100vh;
 	overflow-x: hidden;

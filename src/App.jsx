@@ -16,7 +16,7 @@ export default function () {
 
 	const firstLoad = useRef(false);
 
-	console.log(gameStart, gameEnd);
+	const totalCorrect = useRef(0);
 
 	/**
 	 * If the game has not started, start the game. If the game has started, reset the game
@@ -110,6 +110,9 @@ export default function () {
 	 * opposite of what it was before
 	 */
 	function gameEndStatus() {
+		/**
+		 * first click is to show the answers and second is to restart the game
+		 */
 		if (gameEnd) {
 			startGame();
 		}
@@ -130,6 +133,7 @@ export default function () {
 						gameStart={gameStart}
 						gameEnd={gameEnd}
 						gameEndStatus={gameEndStatus}
+						totalCorrect={totalCorrect.current}
 					/>
 				);
 			}
@@ -144,7 +148,9 @@ export default function () {
         been called before, then it will set the firstLoad.current to true. If it has been called before,
         then it will fetch the questions from the API. */
 		if (firstLoad.current) {
-			fetch('https://opentdb.com/api.php?amount=10&type=multiple&encode=base64')
+			fetch(
+				'https://opentdb.com/api.php?amount=10&category=31&type=multiple&encode=base64'
+			)
 				.then((response) => response.json())
 				.then((value) => {
 					setQuestion(setQuestionAnswersArray(value));
@@ -159,6 +165,18 @@ export default function () {
 			const questionStatus = question.every((que) =>
 				que.answer.some((ans) => ans.clickStatus)
 			);
+			totalCorrect.current = question.filter((que) => {
+				const cAns = que.correctAnswer;
+
+				return que.answer.some((ans) => {
+					if (ans.answer === cAns && ans.clickStatus) {
+						return true;
+					} else {
+						return false;
+					}
+				});
+			}).length;
+
 			if (questionStatus) {
 				setGameStart(2);
 			} else {

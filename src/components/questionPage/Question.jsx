@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SingleQuestion from './SingleQuestion';
 
 import './question.css';
 
 export default function (props) {
+	console.log('This is rendering');
+
 	/**
 	 * if ans is not submitted or all answers are not selected then it gives false else true
 	 */
@@ -29,9 +31,17 @@ export default function (props) {
 	return (
 		<section className='questions--container'>
 			{questionJSX}
-			<button className='btn qa-button' onClick={props.gameEndStatus}>
-				{buttonValue}
-			</button>
+			<footer className='question--footer'>
+				{!gameStatus && (
+					<span className='correctAnswer'>
+						You scored {props.totalCorrect}/{props.question.length} correct
+						answers
+					</span>
+				)}
+				<button className='btn qa-button' onClick={props.gameEndStatus}>
+					{buttonValue}
+				</button>
+			</footer>
 		</section>
 	);
 }
