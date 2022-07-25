@@ -4,20 +4,27 @@ import './singleQuestion.css';
 
 export default function (props) {
 	const answersMap = props.answers.map((answer, answerNumber) => {
-		const styles = answer.clickStatus
-			? {
-					background: '#D6DBF5',
-			  }
-			: {
-					background: '#ffffff',
-			  };
+		let styles;
+		if (answer.clickStatus) {
+			styles = {
+				background: '#D6DBF5',
+			};
+		} else {
+			styles = {
+				background: '#ffffff',
+			};
+		}
 
 		return (
 			<span
 				className='answer'
 				key={answer.answer}
 				style={styles}
-				onClick={() => props.answerOnClick(answerNumber, props.questionNum)}
+				onClick={() => {
+					return props.gameStatus
+						? props.answerOnClick(answerNumber, props.questionNum)
+						: '';
+				}}
 			>
 				{answer.answer}
 			</span>

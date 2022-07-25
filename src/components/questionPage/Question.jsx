@@ -17,6 +17,7 @@ export default function (props) {
 			<SingleQuestion
 				questions={value.question}
 				answers={value.answer}
+				correctAnswer={value.correctAnswer}
 				answerOnClick={props.answerOnClick}
 				key={index}
 				questionNum={index}
