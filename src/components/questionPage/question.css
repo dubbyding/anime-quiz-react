@@ -3,9 +3,17 @@
 	display: flex;
 	flex-direction: column;
 }
+.question--footer {
+	margin: 0 auto;
+	margin-top: 21px;
+	display: flex;
+
+	gap: 20px;
+
+	align-items: center;
+}
 
 .qa-button {
-	margin: 0 auto;
 	font-family: 'Inter';
 	font-weight: 600;
 	font-size: 10.24px;
@@ -15,5 +23,13 @@
 	color: var(--button-text-color);
 
 	padding: 10px 21px;
-	margin-top: 21px;
+}
+.correctAnswer {
+	font-family: 'Inter';
+	font-weight: 700;
+	font-size: 12.8px;
+	line-height: 15px;
+	text-align: center;
+
+	color: var(--main-text-color);
 }

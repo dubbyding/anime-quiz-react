@@ -16,7 +16,7 @@ export default function () {
 
 	const firstLoad = useRef(false);
 
-	console.log(gameStart, gameEnd);
+	const totalCorrect = useRef(0);
 
 	/**
 	 * If the game has not started, start the game. If the game has started, reset the game
@@ -110,6 +110,9 @@ export default function () {
 	 * opposite of what it was before
 	 */
 	function gameEndStatus() {
+		/**
+		 * first click is to show the answers and second is to restart the game
+		 */
 		if (gameEnd) {
 			startGame();
 		}
@@ -130,6 +133,7 @@ export default function () {
 						gameStart={gameStart}
 						gameEnd={gameEnd}
 						gameEndStatus={gameEndStatus}
+						totalCorrect={totalCorrect.current}
 					/>
 				);
 			}
@@ -159,6 +163,18 @@ export default function () {
 			const questionStatus = question.every((que) =>
 				que.answer.some((ans) => ans.clickStatus)
 			);
+			totalCorrect.current = question.filter((que) => {
+				const cAns = que.correctAnswer;
+
+				return que.answer.some((ans) => {
+					if (ans.answer === cAns && ans.clickStatus) {
+						return true;
+					} else {
+						return false;
+					}
+				});
+			}).length;
+
 			if (questionStatus) {
 				setGameStart(2);
 			} else {
