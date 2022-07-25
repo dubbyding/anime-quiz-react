@@ -13,3 +13,16 @@
 	width: 100vw;
 	height: 100vh;
 }
+
+.btn {
+	background: var(--button-color);
+	border-radius: 15px;
+
+	border: 0;
+}
+
+.btn:hover {
+	background-color: var(--button-color-hover);
+
+	cursor: pointer;
+}
