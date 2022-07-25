@@ -12,6 +12,7 @@
 
 	width: 100vw;
 	height: 100vh;
+	overflow-x: hidden;
 }
 
 .btn {
@@ -23,6 +24,5 @@
 
 .btn:hover {
 	background-color: var(--button-color-hover);
-
 	cursor: pointer;
 }

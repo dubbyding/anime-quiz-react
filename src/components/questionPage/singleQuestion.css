@@ -1,0 +1,52 @@
+.question--section {
+	padding: 15px 0;
+	border-bottom: 0.794239px solid var(--question-border-color);
+
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.questions {
+	font-family: 'Karla';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 19px;
+
+	color: var(--main-text-color);
+}
+
+.answer--section {
+	display: flex;
+	gap: 13px;
+	background-color: transparent;
+}
+
+.answer {
+	padding: 5px 20px;
+	border: 0.794239px solid var(--button-color);
+	border-radius: 7.94239px;
+
+	/*
+        For Fonts
+    */
+	font-family: 'Inter';
+	font-weight: 500;
+	font-size: 10.24px;
+	line-height: 12px;
+	/* identical to box height */
+
+	text-align: center;
+
+	color: var(--main-text-color);
+
+	transition: transform 0.5s;
+
+	display: flex;
+	align-items: center;
+}
+
+.answer:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
