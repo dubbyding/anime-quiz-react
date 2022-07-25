@@ -1,0 +1,19 @@
+.questions--container {
+	padding: 25px 75px;
+	display: flex;
+	flex-direction: column;
+}
+
+.qa-button {
+	margin: 0 auto;
+	font-family: 'Inter';
+	font-weight: 600;
+	font-size: 10.24px;
+	line-height: 12px;
+	text-align: center;
+
+	color: var(--button-text-color);
+
+	padding: 10px 21px;
+	margin-top: 21px;
+}
