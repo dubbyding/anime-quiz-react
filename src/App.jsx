@@ -148,7 +148,9 @@ export default function () {
         been called before, then it will set the firstLoad.current to true. If it has been called before,
         then it will fetch the questions from the API. */
 		if (firstLoad.current) {
-			fetch('https://opentdb.com/api.php?amount=10&type=multiple&encode=base64')
+			fetch(
+				'https://opentdb.com/api.php?amount=10&category=31&type=multiple&encode=base64'
+			)
 				.then((response) => response.json())
 				.then((value) => {
 					setQuestion(setQuestionAnswersArray(value));
