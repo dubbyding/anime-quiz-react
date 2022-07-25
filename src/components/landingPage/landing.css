@@ -1,0 +1,17 @@
+.landing--section {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.landing--header {
+	font-family: 'Karla', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 31.25px;
+	line-height: 37px;
+	text-align: center;
+
+	color: var(--main-text-color);
+}

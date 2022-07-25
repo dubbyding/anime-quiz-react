@@ -1,5 +1,11 @@
 import React from 'react';
 
+import Landing from './components/landingPage/Landing';
+
 export default function () {
-	return <React.Fragment>here</React.Fragment>;
+	return (
+		<React.Fragment>
+			<Landing />
+		</React.Fragment>
+	);
 }
